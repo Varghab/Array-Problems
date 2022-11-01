@@ -1,0 +1,27 @@
+#include <iostream>
+#include <climits>
+#include <vector>
+using namespace std;
+
+
+struct Array{
+    int A[20];
+    int size;
+    int length;
+};
+
+
+void missingElementbyHashing(int a[],int n){
+    int highIndex = peakElement(a,n);
+    int high = a[highIndex];
+    int b[high];
+    for(int i = 0;i<n;i++){
+        int temp = a[i];
+        b[temp] = 1;
+    }
+    for(int i=1;i<=high;i++){
+        if(b[i] == 0){
+            cout<<i<<","<<b[i]<<endl;
+        }
+    }
+}
