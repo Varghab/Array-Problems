@@ -1,0 +1,20 @@
+#include <iostream>
+#include <climits>
+#include <vector>
+#include <stdlib.h>
+#include <bits/stdc++.h>
+using namespace std;
+
+int convertFive(int n) {
+    int multiplier = 1;
+    int copy=n;
+    while(n>0){
+        int digit = n%10;
+        if(digit==0){
+            copy = copy + (multiplier * 5);
+        }
+        multiplier *= 10;
+        n/=10;
+    }
+    return copy;
+}
