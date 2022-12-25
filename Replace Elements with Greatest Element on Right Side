@@ -1,0 +1,18 @@
+vector<int> replaceElements(vector<int>& arr) {
+        vector<int>res;
+        if(arr.size()==1){
+            res.push_back(-1);
+            return res;
+        }
+        int temp = -1;
+        for(int i=arr.size()-1;i>=0;i--){
+            if(arr[i]>=temp){
+                res.push_back(temp);
+                temp = arr[i];
+            }else if(arr[i]<temp){
+                res.push_back(temp);
+            }
+        }
+        reverse(res.begin(),res.end());
+        return res;
+    }
