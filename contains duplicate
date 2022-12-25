@@ -1,0 +1,11 @@
+ bool containsDuplicate(vector<int>& nums) {
+        set<int>temp;
+        for(auto x:nums){
+            temp.insert(x);
+        }
+        if(nums.size()==temp.size()){
+            return false;
+        }
+
+        return true;
+    }
