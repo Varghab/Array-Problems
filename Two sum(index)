@@ -1,0 +1,14 @@
+vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int,int>hash;
+        vector<int>ans;
+        for(int i=0;i<nums.size();i++){
+            int found = target-nums[i];
+            if(hash.find(found)!=hash.end()){
+                ans.push_back(hash[found]);
+                ans.push_back(i);
+                break;
+            }
+            hash[nums[i]] = i;
+        }
+        return ans;
+    }
