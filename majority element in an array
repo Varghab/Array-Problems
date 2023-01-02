@@ -15,3 +15,23 @@ int majorityElement(vector<int>& nums) {
     }
     
     // Using boyer-moore voting algorithm.
+   
+    
+    int majorityElement(vector<int>& nums) {
+        map<int,int>m;
+        int num=INT_MIN;
+        int res;
+        for(auto x:nums){
+            m[x]++;
+        }
+        for(auto it=m.begin();it!=m.end();++it){
+            auto x = it->second;
+            if(x > num){
+                num = it->second;
+                res = it->first;
+            }
+        }
+        return res;
+    }
+    
+    //Using hash table
