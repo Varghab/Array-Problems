@@ -1,0 +1,14 @@
+vector<int> majorityElement(vector<int>& nums) {
+        vector<int>res;
+        int v = nums.size()/3;
+        map<int,int>m;
+        for(int x:nums){
+            m[x]++;
+        }
+        for(auto i=m.begin();i!=m.end();++i){
+            if(i->second > v){
+                res.push_back(i->first);
+            }
+        }
+        return res;
+    }
