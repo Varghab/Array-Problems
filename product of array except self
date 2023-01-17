@@ -1,0 +1,21 @@
+ vector<int> productExceptSelf(vector<int>& nums) {
+        vector<int>res;
+        int x = 1;
+        for(auto num:nums){
+            x = x*num;
+            res.push_back(x);
+        }
+        int product = 1;
+        int n = nums.size()-1;
+        for(int i=n;i>=0;i--){
+            if(i==n){
+                res[i] = res[n-1];
+                product = product * nums[i];
+            }else if(i==0){
+                res[i] = product;
+            }else{
+                res[i] = res[i-1]*product;
+                product = product*nums[i];            }
+        }
+        return res;
+    }
