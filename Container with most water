@@ -1,0 +1,15 @@
+int maxArea(vector<int>& height) {
+        int max_area = INT_MIN;
+        int i=0;int j=height.size()-1;
+        int temp;
+        while(i<j){
+            temp=(j-i)*min(height[j],height[i]);
+            max_area = max(max_area, temp);
+            if(height[i]==height[j]) {
+                i++;j--;
+            }
+            else if(height[i]<height[j])i++;
+            else if(height[j]<height[i])j--;
+        }
+        return max_area;
+    }
